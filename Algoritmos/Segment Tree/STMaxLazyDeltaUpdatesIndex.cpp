@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 typedef pair<ll, int> li;
 
-struct STmin{
+struct STmax{
 	
 	int n;
 	vector<ll> A;
@@ -103,12 +103,12 @@ struct STmin{
 	
 public:
 	
-    STmin(vector<ll> v){
+    STmax(vector<ll> v){
         A = v;
         n = v.size();
         ST.resize(4*n + 5);
         L.resize(4*n + 5, 0);
-		build(1, 0, n-1);
+	build(1, 0, n-1);
     }
 
     li query(int a, int b){
@@ -132,7 +132,7 @@ int main(){
 		cin>>A[i];
 	}
 		
-	STmin st(A);
+	STmax st(A);
 	
 	while(q--){
 		int t;
