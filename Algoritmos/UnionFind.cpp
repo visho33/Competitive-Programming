@@ -38,7 +38,7 @@ public:
 	
     UnionFind(int a){
         n = a;
-        tamano.resize(n);
+        tamano.resize(n, 1);
         padre.resize(n);
         for(int i = 0; i<n; i++){
         	padre[i] = i;
