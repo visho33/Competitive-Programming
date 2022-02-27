@@ -26,7 +26,7 @@ struct STmin{
 	
 	ll query(int node, int l, int r, int i, int j){
 	
-		if(L[node] != 0){
+		if(L[node] != 1e18){
 			
 			ST[node] = min(ST[node], L[node]);
 			
@@ -48,7 +48,7 @@ struct STmin{
 	
 	void fix_update(int node, int l, int r, int i, int j, ll x){
 	
-		if(L[node] != 0){
+		if(L[node] != 1e18){
 			ST[node] = min(ST[node], L[node]);
 			
 			if(l != r){
@@ -88,8 +88,8 @@ public:
         A = v;
         n = v.size();
         ST.resize(4*n + 5);
-        L.resize(4*n + 5, 0);
-		build(1, 0, n-1);
+        L.resize(4*n + 5, 1e18);
+	build(1, 0, n-1);
     }
 
     ll query(int a, int b){
